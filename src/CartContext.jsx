@@ -7,8 +7,8 @@ const CartDispatchContext = createContext(null);
 
 export function CartContext({ children }) {
   const [cartproducts, dispatch] = useReducer(
-    tasksReducer,
-    []
+    cartProductReducer,
+    initialdata
   );
 
   return (
@@ -28,7 +28,7 @@ export function useCartDispatch() {
   return useContext(CartDispatchContext);
 }
 
-function tasksReducer(CartProducts, action) {
+function cartProductReducer(CartProducts, action) {
   switch (action.type) {
     case 'create': {
       return [...CartProducts, {
@@ -63,6 +63,48 @@ function tasksReducer(CartProducts, action) {
     }
   }
 }
+
+const initialdata=[
+    {product:{
+      id:1 ,
+      name:"Iphone 11 pro",
+      desc:"256GB, Navy Blue",
+      price:"900",
+      img:"./img1.webp"
+   },
+   amount:5
+}
+   ,
+   {product:{
+    id:2 ,
+    name:"Iphone 11 pro",
+    desc:"256GB, Navy Blue",
+    price:"900",
+    img:"./img1.webp"
+ },
+ amount:5
+}
+  ,
+  {product:{
+    id:3 ,
+    name:"Iphone 11 pro",
+    desc:"256GB, Navy Blue",
+    price:"900",
+    img:"./img1.webp"
+ },
+ amount:5
+}
+  ,
+  {product:{
+    id:4 ,
+    name:"Iphone 11 pro",
+    desc:"256GB, Navy Blue",
+    price:"900",
+    img:"./img1.webp"
+ },
+ amount:5
+}
+  ]
 
 
 
