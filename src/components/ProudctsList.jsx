@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { useCartDispatch,useCartProducts} from '../CartContext'
 
@@ -8,12 +8,27 @@ import { useCartDispatch,useCartProducts} from '../CartContext'
 function ProudctsList({product}) {
   const CartDispath=useCartDispatch();
   const cartProducts=useCartProducts();
-  const [added,setAdded] = useState(false)
+  const [added ,setAdded]=useState(false)
   
+  const isAdded=(product)=>{
+    const res=cartProducts.filter(element => element.product.id===product.id);
+    return res.length==1
+  }
+
+  
+
   const addHandler= ()=>{
     CartDispath({product:product,type:'add'})
     setAdded(true)
+
   }
+
+  useEffect(() => {
+    setAdded(isAdded(product))
+  
+    
+  }, [])
+  
   
   return (
     
