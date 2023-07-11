@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from "react-router-dom";
+import { Outlet ,Link} from "react-router-dom";
 import {BsCart4} from 'react-icons/bs';
 
 export default function Layout() {
@@ -14,7 +14,7 @@ export default function Layout() {
           <li>Home</li>
           <li>Products</li>
           <li>About Us</li>
-          <li className='text-5lg'><a href="./cart"><BsCart4/></a></li>
+          <li className='text-5lg'><Link to="/Cart"><BsCart4/></Link></li>
         </ul>
       </div>
       <Outlet />
