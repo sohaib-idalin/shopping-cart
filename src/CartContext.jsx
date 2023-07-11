@@ -30,7 +30,8 @@ export function useCartDispatch() {
 
 function cartProductReducer(CartProducts, action) {
   switch (action.type) {
-    case 'create': {
+    case 'add': {
+        console.log('add')
       return [...CartProducts, {
         product: action.product,
         amount: 1
@@ -48,12 +49,11 @@ function cartProductReducer(CartProducts, action) {
     case '-': {
         return CartProducts.map(cp => {
             if (cp.product.id === action.product.id) {
-                if(cp.amount>1)return {...cp , amount: cp.amount-1};
-              return;
+            return {...cp , amount: cp.amount-1};
             } else {
               return cp;
             }
-          });
+          }).filter(cp => cp.amount !== 0);
     }
     case 'delete': {
         return CartProducts.filter(cp => cp.product.id !== action.product.id);
@@ -64,47 +64,7 @@ function cartProductReducer(CartProducts, action) {
   }
 }
 
-const initialdata=[
-    {product:{
-      id:1 ,
-      name:"Iphone 11 pro",
-      desc:"256GB, Navy Blue",
-      price:"900",
-      img:"./img1.webp"
-   },
-   amount:5
-}
-   ,
-   {product:{
-    id:2 ,
-    name:"Iphone 11 pro",
-    desc:"256GB, Navy Blue",
-    price:"900",
-    img:"./img1.webp"
- },
- amount:5
-}
-  ,
-  {product:{
-    id:3 ,
-    name:"Iphone 11 pro",
-    desc:"256GB, Navy Blue",
-    price:"900",
-    img:"./img1.webp"
- },
- amount:5
-}
-  ,
-  {product:{
-    id:4 ,
-    name:"Iphone 11 pro",
-    desc:"256GB, Navy Blue",
-    price:"900",
-    img:"./img1.webp"
- },
- amount:5
-}
-  ]
+const initialdata=[]
 
 
 

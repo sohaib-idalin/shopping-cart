@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import { useCartDispatch,useCartProducts} from '../CartContext'
 
@@ -8,9 +8,11 @@ import { useCartDispatch,useCartProducts} from '../CartContext'
 function ProudctsList({product}) {
   const CartDispath=useCartDispatch();
   const cartProducts=useCartProducts();
+  const [added,setAdded] = useState(false)
   
   const addHandler= ()=>{
-
+    CartDispath({product:product,type:'add'})
+    setAdded(true)
   }
   
   return (
@@ -23,7 +25,10 @@ function ProudctsList({product}) {
                 <h3 className='font-medium p-2'>{product.name}</h3>
                 <p className=' text-gray-700 p-2'>{product.desc}</p>
                 <p className='font-medium text-center p-2'>{product.price} $</p>
-                <button className='bg-gray-700 p-1 px-4 rounded-full my-2 text-white' onClick={addHandler} >Add To cart</button>
+                {added ? <div className='bg-gray-700 p-1 px-4 rounded-full my-2 text-white'>Added</div> 
+                :<button className='bg-gray-700 p-1 px-4 rounded-full my-2 text-white' onClick={addHandler} >Add To cart</button>}
+                
+                
             </div>
 
        
