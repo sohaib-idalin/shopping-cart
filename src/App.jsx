@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import NavBar from "./nav"
+import Welcome from './welcome'
+import ProudctsList from './ProudctsList'
+
+
+const Products=[
+  {
+    id:1 ,
+    name:"Iphone 11 pro",
+    desc:"256GB, Navy Blue",
+    price:"900",
+    img:"./img1.webp"
+ }
+ ,
+ {
+  id:2 ,
+  name:"Samsung galaxy",
+  desc:"256GB, Navy Blue",
+  price:"900",
+  img:"./img2.webp"
+  
+}
+,
+{
+  id:3 ,
+  name:"Canon EOS M50",
+  desc:"Onyx Black",
+  price:"1900",
+  img:"./img3.webp"
+  
+}
+,
+{
+  id:4 ,
+  name:"MacBook Pro",
+  desc:"1TB, Graphite",
+  price:"1799",
+  img:"./img4.webp"
+  
+}
+]
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <NavBar />
+      <Welcome />
+      <h1 className='text-center text-4xl font-bold'>Our Products</h1>
+      <div className='flex justify-around flex-wrap p-10 gap-5 my-3'>
+        {
+          Products.map(
+            (product)=>(<ProudctsList key={product.id} product={product} />)
+          )
+        }
       </div>
-      <h1 className='text-3xl font-bold underline'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
+   </>
   )
 }
 
 export default App
+
+
