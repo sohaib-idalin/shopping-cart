@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useContext } from 'react'
 import { useCartDispatch,useCartProducts} from '../CartContext'
 
@@ -23,7 +23,7 @@ export default function ProudctsList({product}) {
 
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setAdded(isAdded(product))
   
     
