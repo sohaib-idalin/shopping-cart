@@ -5,7 +5,7 @@ import { useCartDispatch,useCartProducts} from '../CartContext'
 
 
 
-function ProudctsList({product}) {
+export default function ProudctsList({product}) {
   const CartDispath=useCartDispatch();
   const cartProducts=useCartProducts();
   const [added ,setAdded]=useState(false)
@@ -52,4 +52,3 @@ function ProudctsList({product}) {
   )
 }
 
-export default ProudctsList
