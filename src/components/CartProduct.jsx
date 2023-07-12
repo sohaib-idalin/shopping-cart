@@ -16,20 +16,20 @@ export default function CartProduct({product,amount}) {
     }
 
     return (
-        <div >
-            <div className='bg-gray-100 p-3 my-5'>    
+        <>
+            <div className='bg-gray-100 p-3 my-5 '>    
                 
-                <ul className='flex justify-around items-center'>
+                <ul className=' flex justify-around items-center '>
                 <img src={product.img} alt="fail to load" className='w-20 h-20 rounded-full' />
                     <div >
                     
                         <li className='font-medium text-lg'>{product.name}</li>
                         <li className='text-gray-600'>{product.desc}</li>
                     </div>
-                        <div className='flex items-center '>
-                            <button onClick={handleMinus} className='px-3 text-white bg-gray-800 rounded-full mx-2 font-bold'>-</button>
-                            <p>{amount}</p>
-                            <button onClick={handlePlus} className='px-3 text-white bg-gray-800 rounded-full mx-2 font-bold' >+</button>
+                        <div className='flex items-center'>
+                            <button onClick={handleMinus} className='px-3 text-white bg-gray-800 rounded-full mx-4 font-bold'>-</button>
+                            <p >{amount}</p>
+                            <button onClick={handlePlus} className='px-3 text-white bg-gray-800 rounded-full mx-4 font-bold' >+</button>
                         </div>
                         
                     <li >{product.price*amount} $</li>
@@ -39,6 +39,6 @@ export default function CartProduct({product,amount}) {
 
             </div>
             
-        </div>
+        </>
   )
 }
