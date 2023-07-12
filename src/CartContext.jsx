@@ -67,6 +67,10 @@ function cartProductReducer(CartProducts, action) {
       localStorage.setItem(CartLocalKey,JSON.stringify(res))
       return res
     }
+    case 'clear': {
+      localStorage.setItem(CartLocalKey,JSON.stringify([]))
+      return []
+    }
     default: {
       throw Error('Unknown action: ' + action.type);
     }
