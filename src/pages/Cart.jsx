@@ -7,10 +7,10 @@ export default function Cart() {
   const CartDispath=useCartDispatch();
 
     return (
-    <div className='text-center'>
-        <h1 className='text-xl font-bold m-4'>YOUR CART</h1>
-        <h2 className='text-gray-600 font-medium mb-10'>You have {cartProducts.length} products in your cart</h2>
-        {cartProducts.map((cartProduct)=>(<CartProduct key={cartProduct.product.id} product={cartProduct.product} amount={cartProduct.amount}/>))}
-    </div>
+          <div className='text-center'>
+              <h1 className='text-xl font-bold m-4'>YOUR CART</h1>
+              <h2 className='text-gray-600 font-medium mb-10'>You have {cartProducts.length} products in your cart</h2>
+              {cartProducts.map((cartProduct)=>(<CartProduct key={cartProduct.product.id} product={cartProduct.product} amount={cartProduct.amount}/>))}
+          </div>
   )
 }
