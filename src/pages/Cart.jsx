@@ -21,6 +21,26 @@ export default function Cart() {
       </div>
       {cartProducts.map((cartProduct) => (<CartProduct key={cartProduct.product.id} product={cartProduct.product} amount={cartProduct.amount} />))}
 
+      <div className='fixed bottom-0 bg-cyan-400'>
+        <div className='w-[50%]'>
+          <div>
+            <div className='flex'>
+              <div>Subtotal</div>
+              <div></div>
+            </div>
+            <div className='flex'>
+              <div>Shipping fee</div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div>
+            <div>Total</div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }
