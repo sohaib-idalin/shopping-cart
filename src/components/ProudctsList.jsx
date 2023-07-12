@@ -40,7 +40,7 @@ export default function ProudctsList({product}) {
                 <h3 className='font-medium p-2'>{product.name}</h3>
                 <p className=' text-gray-700 p-2'>{product.desc}</p>
                 <p className='font-medium text-center p-2'>{product.price} $</p>
-                {added ? <div className='bg-gray-700 p-1 px-4 rounded-full my-2 text-white'>Added</div> 
+                {added ? <p className='text-green-700 p-1 px-4 rounded-full my-2'>The Item is added</p> 
                 :<button className='bg-gray-700 p-1 px-4 rounded-full my-2 text-white' onClick={addHandler} >Add To cart</button>}
                 
                 
