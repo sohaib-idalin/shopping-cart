@@ -6,6 +6,10 @@ export default function Cart() {
   const cartProducts = useCartProducts()
   const CartDispath = useCartDispatch();
 
+  const handelClear=()=>{
+    CartDispath({type:'clear'})
+  }
+
   return (
     <>
       <div className='text-center'>
