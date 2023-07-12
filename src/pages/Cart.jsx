@@ -34,7 +34,7 @@ export default function Cart() {
   }
 
   return (
-    <div className='w-[100%]'>
+    <div className='mb-[200px]'>
       <div className='text-center'>
         <h1 className='text-xl font-bold m-4'>YOUR CART</h1>
         <h2 className='text-gray-600 font-medium mb-10'>You have {cartProducts.length} products in your cart</h2>
@@ -44,7 +44,7 @@ export default function Cart() {
       </div>
       {cartProducts.map((cartProduct) => (<CartProduct key={cartProduct.product.id} product={cartProduct.product} amount={cartProduct.amount} />))}
 
-      <div className='sticky bottom-0 bg-gray-100 w-screen shadow-lg '>
+      <div className='fixed bottom-0 bg-gray-100 w-screen shadow-lg '>
         <div className='w-[50%] mx-auto px-10 py-2 leading-8 font-medium  '>
           <div>
             <div className='flex justify-between '>
