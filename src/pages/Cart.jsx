@@ -56,7 +56,7 @@ export default function Cart() {
               </div>
               <div className='flex justify-between'>
                 <div>Shipping fee :</div>
-                <div className='right-0'>2 $ * {shippingCount()} </div>
+                <div className='right-0'> {shippingCount()} * 2 $ </div>
                 <div>{2*shippingCount()} $</div>
               </div>
             </div>
